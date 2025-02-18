@@ -25,6 +25,9 @@ export default {
       gridTemplateColumns: {
         'auto': 'repeat(auto-fit, minmax(200px, 1fr))',
       },
+      backgroundImage: {
+        'footer-bg': "url('/footer-bg-color.png')",
+      },
     },
   },
   plugins: [],
