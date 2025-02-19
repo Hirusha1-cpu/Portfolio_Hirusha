@@ -36,7 +36,7 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import hirusha_logo from './hirusha-logo.jpg';
-import hirusha_logo_dark from './light-high-resolution-logo.png';
+import hirusha_logo_dark from './hirusha-logo_darkmode.png';
 
 export const assets = {
     user_image,
