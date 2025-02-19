@@ -10,10 +10,10 @@ const Services = () => {
         <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error totam asperiores recusandae qui, vel commodi consequatur odio, ut, quia autem quis harum incidunt fuga nam facere distinctio et quibusdam. Repellat.</p>
         <div className='grid grid-cols-auto gap-6 my-10'>
             {serviceData.map(({icon,title,description, link},index)=>(
-                <div key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500'>
+                <div key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white'>
                     <Image src={icon} alt='' className='w-10'/>
-                    <h3 className='text-lg my-4 text-gray-700'>{title}</h3>
-                    <p className='text-sm text-gray-400 lending-5 '>{description}</p>
+                    <h3 className='text-lg my-4 text-gray-700 dark:text-white'>{title}</h3>
+                    <p className='text-sm text-gray-400 lending-5 dark:text-white/80 '>{description}</p>
                     <a href={link} className='flex items-center gap-2 text-sm mt-5'>Read More <Image alt='' src={assets.right_arrow} className='w-4'/>  </a>
                 </div>
             ))}
