@@ -48,7 +48,7 @@ const About = ({isDarkMode}) => {
                         index
                     ) => (
                         <motion.li
-                        whileInView={scale}
+                        whileHover={{scale:1.05}}
                         className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover
                          hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50' key={index}>
                             <Image src={isDarkMode ? iconDark :icon} alt={title} className='w-7 mt-3'/>
@@ -57,13 +57,24 @@ const About = ({isDarkMode}) => {
                         </motion.li>
                     ))}
                 </motion.ul>
-                <h4 className='my-6 text-gray-700 font-Ovo dark:text-white/80'>Tools I Use</h4>
-                <ul className='flex items-center gap-3 sm:gap-5'>{toolsData.map((tool,index)=>(
-                    <li key={index} className='flex items-center justify-center w-12 sm:w-14 aspect-squre border border-gray-400 rounded-lg
+                <motion.h4 
+                initial={{y:20,opacity:0}}
+                whileInView={{y:0,opacity:1}}
+                transition={{delay:1.3,duration:0.8}} 
+                className='my-6 text-gray-700 font-Ovo dark:text-white/80'>Tools I Use</motion.h4>
+                <motion.ul
+                        initial={{opacity:0}}
+                        whileInView={{opacity:1}}
+                        transition={{duration:0.6, delay:1.5}} 
+                className='flex items-center gap-3 sm:gap-5'>{toolsData.map((tool,index)=>(
+                    <motion.li
+                    whileHover={{scale:1.1}}
+
+                    key={index} className='flex items-center justify-center w-12 sm:w-14 aspect-squre border border-gray-400 rounded-lg
                     cursor-pointer  hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black'>
                         <Image src={tool} alt='Tool' className='w-5 sm:w-7 '/>
-                    </li>
-                ))}</ul>
+                    </motion.li>
+                ))}</motion.ul>
         </motion.div>
       </motion.div> 
     </motion.div>
