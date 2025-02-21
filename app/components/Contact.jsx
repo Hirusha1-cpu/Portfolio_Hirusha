@@ -7,11 +7,15 @@ const Contact = () => {
     const [result, setResult] = useState("");
 
     const onSubmit = async (event) => {
+        console.log(process.env.NEXT_PUBLIC_WEB3_FORMS_ACCESS_KEY);
+        
         event.preventDefault();
         setResult("Sending....");
         const formData = new FormData(event.target);
 
-        formData.append("access_key", "9a652381-6a41-407e-be3e-f676b6c22af8");
+        // formData.append("access_key", "9a652381-6a41-407e-be3e-f676b6c22af8");
+        formData.append("access_key", process.env.NEXT_PUBLIC_WEB3_FORMS_ACCESS_KEY);
+
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
