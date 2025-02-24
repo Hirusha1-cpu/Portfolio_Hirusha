@@ -8,6 +8,10 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
+import ThreeScene from "./components/ThreeScene";
+import PhoneScene from "./components/PhoneScene";
+import RotatingTextScene from "./components/RotatingTextScene";
+import EarthScene from "./components/EarthScene";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true)
@@ -30,6 +34,10 @@ export default function Home() {
   },[isDarkMode])
   return (
    <>
+   {/* <ThreeScene isDarkMode={isDarkMode} /> */}
+   {/* <PhoneScene isDarkMode={isDarkMode} /> */}
+   {/* <RotatingTextScene isDarkMode={isDarkMode} /> */}
+   <EarthScene isDarkMode={isDarkMode} />
    <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
    <Header isDarkMode={isDarkMode}/>
    <About isDarkMode={isDarkMode}/>
