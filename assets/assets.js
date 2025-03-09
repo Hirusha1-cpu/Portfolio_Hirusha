@@ -37,6 +37,9 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import hirusha_logo from './hirusha-logo.jpg';
 import hirusha_logo_dark from './hirusha-logo_darkmode.png';
+import my_photo1 from './public/my_photo1.png';
+import my_photo2 from './public/my_photo2.jpeg';
+import my_photo3 from './public/my_photo3.jpeg';
 
 export const assets = {
     user_image,
@@ -77,7 +80,10 @@ export const assets = {
     right_arrow_bold,
     right_arrow_bold_dark,
     hirusha_logo,
-    hirusha_logo_dark
+    hirusha_logo_dark,
+    my_photo1,
+    my_photo2,
+    my_photo3
 };
 
 export const workData = [

@@ -11,7 +11,13 @@ const Header = () => {
             whileInView={{scale:1}}
             transition={{duration:0.6, type:'spring', stiffness:100}}
             >
-                <Image src={assets.profile_img} alt='' className='rounded-full w-32' />
+                {/* <Image src={assets.my_photo2} alt='' className='rounded-full w-32' /> */}
+                <Image 
+  src={assets.my_photo3} 
+  alt='' 
+  className='rounded-full w-64 transition-transform duration-300 hover:scale-110 animate-pulse' 
+/>
+
             </motion.div>
             <motion.h3
              initial={{y:-30 , opacity:0}}
@@ -40,7 +46,7 @@ const Header = () => {
                   initial={{y:30 , opacity:0}}
                   whileInView={{y:0,opacity:1}}
                   transition={{duration:0.6, delay:1.2}}
-                href="/sample-resume.pdf" download className= 'bg-white dark:text-black px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2'>CV <Image src={assets.download_icon} alt='' className=' w-4' /> </motion.a>
+                href="/Hirusha_Fernando_ASE.pdf" download className= 'bg-white dark:text-black px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2'>CV <Image src={assets.download_icon} alt='' className=' w-4' /> </motion.a>
             </div>
         </div>
     )
