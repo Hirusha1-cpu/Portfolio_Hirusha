@@ -38,7 +38,7 @@ const About = ({isDarkMode}) => {
           whileInView={{opacity:1}}
           transition={{duration:0.6, delay:0.8}} 
         className='flex-1'>
-                <p className='mb-10 max-w-2xl font-Ovo'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque fugit eveniet consequatur impedit quis corrupti? Sunt dolorum, porro minima nesciunt est eius, quia minus, ullam modi ipsa eveniet sint laudantium.</p>
+                <p className='mb-10 max-w-2xl font-Ovo'>I’m a Full Stack Developer with expertise in Laravel, React, Spring Boot, and AWS. I build scalable applications with CI/CD pipelines, leveraging Tailwind CSS and MUI for sleek UIs. Passionate about automation and cloud solutions, I streamline development workflows efficiently.</p>
                 <motion.ul
                   initial={{opacity:0}}
                   whileInView={{opacity:1}}

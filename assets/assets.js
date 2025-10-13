@@ -39,6 +39,7 @@ import hirusha_logo from './hirusha-logo.jpg';
 import hirusha_logo_dark from './hirusha-logo_darkmode.png';
 import my_photo1 from './public/my_photo1.png';
 import my_photo2 from './public/my_photo2.jpeg';
+import my_photo_2 from './public/my_photo_2.jpg';
 import my_photo3 from './public/my_photo3.jpeg';
 
 export const assets = {
@@ -83,7 +84,8 @@ export const assets = {
     hirusha_logo_dark,
     my_photo1,
     my_photo2,
-    my_photo3
+    my_photo3,
+    my_photo_2
 };
 
 export const workData = [
@@ -117,8 +119,8 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript, Java' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BIT UCSC' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 

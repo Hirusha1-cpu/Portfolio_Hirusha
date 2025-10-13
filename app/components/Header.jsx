@@ -13,7 +13,7 @@ const Header = () => {
       >
         {/* <Image src={assets.my_photo2} alt='' className='rounded-full w-32' /> */}
         <Image
-          src={assets.my_photo3}
+          src={assets.my_photo_2}
           alt=""
           className="rounded-full w-64 transition-transform duration-300 hover:scale-110 animate-pulse"
         />
@@ -32,7 +32,7 @@ const Header = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo"
       >
-        Backend Developer from SriLanka
+        Full Stack Engineer from SriLanka
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -40,10 +40,7 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-Ovo"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab doloribus
-        placeat odio a itaque dolorem modi iusto earum optio expedita, assumenda
-        vel repellendus incidunt id suscipit blanditiis nihil perspiciatis
-        saepe?
+        I'm a passionate Full Stack Engineer with expertise in DevOps practices and Backend development. I build scalable web apps, automate deployments, and develop secure, decentralized solutions—bridging innovation with technology to create impactful digital experiences
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-5 mt-10 ">
         <motion.a
