@@ -25,7 +25,7 @@ const Services = () => {
          initial={{opacity:0}}
          whileInView={{opacity:1}}
          transition={{duration:0.6, delay:0.7}}
-        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error totam asperiores recusandae qui, vel commodi consequatur odio, ut, quia autem quis harum incidunt fuga nam facere distinctio et quibusdam. Repellat.</motion.p>
+        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>I develop scalable web applications using Laravel, React, and AWS, focusing on clean design, automation, and performance. I build secure APIs, optimize databases, and implement CI/CD pipelines to ensure seamless deployment. Passionate about creating efficient, cloud-based systems that enhance business productivity and deliver exceptional digital experiences.</motion.p>
         <motion.div
          initial={{opacity:0}}
          whileInView={{opacity:1}}

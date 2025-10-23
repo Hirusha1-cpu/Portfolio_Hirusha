@@ -41,6 +41,12 @@ import my_photo1 from './public/my_photo1.png';
 import my_photo2 from './public/my_photo2.jpeg';
 import my_photo_2 from './public/my_photo_2.jpg';
 import my_photo3 from './public/my_photo3.jpeg';
+import erp_1 from './public/ERP_1.png'
+import erp_aahaas from './public/ERP_aahaas.png'
+import erp_apple from './public/ERP_apple.png'
+import jeewa from './public/Jeewa.png'
+import pos from './public/POS_1.png'
+import mern_1 from './public/mern_1.png'
 
 export const assets = {
     user_image,
@@ -85,41 +91,91 @@ export const assets = {
     my_photo1,
     my_photo2,
     my_photo3,
-    my_photo_2
+    my_photo_2,
+    erp_1,
+    erp_aahaas,
+    erp_apple,
+    jeewa,
+    pos
 };
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
+        title: 'ERP and POS project',
+        description: 'Connecting POS system and ERP system when some stock sales happen from POS system then as soon as possible it updated in ERP system',
+        bgImage: '/ERP_1.png',
+        link: 'https://github.com/Hirusha1-cpu/Retail_ERP_Suite.git',
+        categories: ['erp', 'pos'],
+        techStack: ['React', 'Node.js', 'MySQL', 'Express']
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
+        title: 'ERP for Aahaas, AppleHolidays Companies',
+        description: 'There connecting three companies together then when they get there system orders and quotations as soon as possible it shows in ERP system and created invoices, PNL details, Bank accounts , manual invoices creations also happen there. There According to account receivables and payables then can be get there actulal PnL details. And summary reports also available in the system.',
+        bgImage: '/ERP_aahaas.png',
+        link: 'https://dev-erp.aahaas.com/', // Add your actual link
+        categories: ['erp'],
+        techStack: ['React', 'Node.js', 'MySQL', 'Express']
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
+        title: 'MERN auth site',
+        description: 'Developed a secure authentication system with JWT-based authentication, email OTP verification using Nodemailer, and password reset functionality.',
+        bgImage: '/mern_1.png',
+        link: 'https://mern-auth-client-omega.vercel.app/', // Add your actual link
+        categories: ['fullstack'],
+        techStack: ['MERN Stack', 'JWT', 'Nodemailer']
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
+        title: 'Sales, Purchase, Inventory, and Repair Management System for Jeewa Computers',
+        description: 'Developed a secure business management system handling sales, repairs, employees, invoices, and reports using MySQL for efficient real-time data operations.',
+        bgImage: '/Jeewa.png',
+        link: 'https://github.com/Hirusha1-cpu/jeewasolutions', // Add your actual link
+        categories: ['management'],
+        techStack: ['MySQL', 'React', 'Node.js']
     },
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
-]
+  { 
+    icon: assets.web_icon, 
+    title: 'Full Stack Web Development', 
+    description: 'I build high-performance web applications using Laravel and React, ensuring seamless backend–frontend integration with clean, maintainable code.', 
+    link: '' 
+  },
+  { 
+    icon: assets.mobile_icon, 
+    title: 'Cloud & DevOps Solutions', 
+    description: 'Designing CI/CD pipelines with Jenkins, Docker, Kubernetes, and AWS for automated, scalable, and secure application delivery.', 
+    link: '' 
+  },
+  { 
+    icon: assets.ui_icon, 
+    title: 'API Development & Integration', 
+    description: 'Expert in RESTful and GraphQL APIs, integrating third-party services like payment gateways, social platforms, and analytics tools.', 
+    link: '' 
+  },
+  { 
+    icon: assets.graphics_icon, 
+    title: 'Database Design & Optimization', 
+    description: 'Creating optimized MySQL and PostgreSQL architectures for efficient data handling, analytics, and high-traffic performance.', 
+    link: '' 
+  },
+  { 
+    icon: assets.web_icon, 
+    title: 'System Security & Compliance', 
+    description: 'Implementing secure authentication, encryption, and access control to ensure data protection and compliance with web standards.', 
+    link: '' 
+  },
+  { 
+    icon: assets.mobile_icon, 
+    title: 'Enterprise & ERP Systems', 
+    description: 'Developing custom ERP and automation systems for sales, inventory, accounting, and reporting tailored to business needs.', 
+    link: '' 
+  },
+];
+
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript, Java' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Lang & Frameworks', description: 'PHP, Java, JavaScript, React, Laravel, MERN, Next Js, SpringBoot' },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BIT UCSC' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
