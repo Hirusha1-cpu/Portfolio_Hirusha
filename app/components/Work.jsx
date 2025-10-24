@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 
 const Work = ({ isDarkMode }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Categorize projects for better organization
   const projectCategories = [
@@ -43,6 +45,18 @@ const Work = ({ isDarkMode }) => {
       : enhancedWorkData.filter((project) =>
           project.categories?.includes(selectedCategory)
         );
+
+  // Function to open modal with project details
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  // Function to close modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <motion.section
@@ -108,10 +122,13 @@ const Work = ({ isDarkMode }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -5 }}
-            className=" rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+            className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
           >
-            {/* Project Image */}
-            <div className="relative h-48 overflow-hidden">
+            {/* Project Image - Clickable */}
+            <div 
+              className="relative h-48 overflow-hidden cursor-pointer"
+              onClick={() => openProjectModal(project)}
+            >
               <Image
                 src={
                   project.bgImage.startsWith("/")
@@ -123,6 +140,17 @@ const Work = ({ isDarkMode }) => {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300" />
+
+              {/* Click to view overlay */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-white bg-opacity-90 text-gray-800 px-4 py-2 rounded-lg font-medium flex items-center gap-2">
+                  <span>View Details</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+              </div>
 
               {/* Tech Stack Badges */}
               <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -183,26 +211,110 @@ const Work = ({ isDarkMode }) => {
         ))}
       </motion.div>
 
-      {/* Show More Button */}
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="text-center mt-16"
-      >
-        <button className="inline-flex items-center gap-3 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full hover:bg-white dark:hover:bg-gray-800 hover:shadow-lg transition-all duration-300 font-medium group">
-          View Complete Portfolio
-          <Image
-            src={
-              isDarkMode
-                ? assets.right_arrow_bold_dark
-                : assets.right_arrow_bold
-            }
-            alt="Right Arrow"
-            className="w-4 group-hover:translate-x-1 transition-transform duration-300"
-          />
-        </button>
-      </motion.div> */}
+      {/* Project Details Modal */}
+      {isModalOpen && selectedProject && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          onClick={closeModal}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25 }}
+            className="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="relative h-64">
+              <Image
+                src={
+                  selectedProject.bgImage.startsWith("/")
+                    ? selectedProject.bgImage
+                    : `/${selectedProject.bgImage}`
+                }
+                alt={selectedProject.title}
+                fill
+                className="object-cover"
+              />
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                {selectedProject.title}
+              </h2>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                  Project Description
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {selectedProject.description}
+                </p>
+              </div>
+
+              {/* Tech Stack */}
+              {selectedProject.techStack && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                    Technologies Used
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.techStack.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Project Link */}
+              <div className="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700">
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium"
+                >
+                  View Live Project
+                  <Image
+                    src={
+                      isDarkMode
+                        ? assets.right_arrow_bold_dark
+                        : assets.right_arrow_bold
+                    }
+                    alt="Right Arrow"
+                    className="w-4"
+                  />
+                </a>
+                
+                <button
+                  onClick={closeModal}
+                  className="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-300 font-medium"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
 
       {/* Stats Section */}
       <motion.div
